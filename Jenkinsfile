@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/username/repository.git'
+        REPO_URL = https://github.com/Dhanushrajan123/task.git
         BRANCH = 'main'
         DEPLOY_DIR = '/var/www/html'
     }
