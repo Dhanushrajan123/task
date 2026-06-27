@@ -24,11 +24,11 @@ pipeline {
         stage('Deploy to Apache') {
             steps {
                 sh """
-                    sudo rm -rf ${DEPLOY_DIR}/*
-                    sudo cp -r * ${DEPLOY_DIR}/
-                    sudo chown -R www-data:www-data ${DEPLOY_DIR}
-                    sudo chmod -R 755 ${DEPLOY_DIR}
-                """
+                    rsync -avz --delete \
+                    ./
+            ubuntu@13.235.135.40: /var/www/html/
+                
+              """
             }
         }
 
