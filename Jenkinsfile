@@ -34,7 +34,7 @@ pipeline {
         stage('Restart Apache') {
             steps {
                 sh """
-                ssh ubuntu@${13.235.135.40} "sudosystemctl restart apache2"
+                ssh ubuntu@13.235.135.40 "sudo systemctl restart apache2"
                 """
             }
         }
