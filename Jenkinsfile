@@ -2,11 +2,10 @@ pipeline {
     agent any
 
     environment {
-        SOURCE_SERVER = 'user@source-server-ip'
-        TARGET_SERVER = 'user@target-server-ip'
+        SOURCE_SERVER = 'ubuntu@3.108.191.59'
+        TARGET_SERVER = 'ubuntu@3.108.191.59'
         DEPLOY_PATH   = '/var/www/html'
-        SSH_KEY       = credentials('your-ssh-key-credential-id')  // Jenkins credential ID
-        APP_NAME      = 'paradigm-shift'
+        
     }
 
     stages {
