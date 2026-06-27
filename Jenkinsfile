@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy to Apache') {
             steps {
                 sh """
-                    scp -r * ${13.232.35.201}:${var/www/html}/
+                    scp -r * ubuntu@13.232.35.201:/var/www/html/
                 """
             }
         }
