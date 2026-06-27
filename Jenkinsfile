@@ -4,7 +4,7 @@ pipeline {
     environment {
         REPO_URL = 'https://github.com/Dhanushrajan123/task.git'
         BRANCH = 'main'
-        DEPLOY_DIR = '/var/www/html'
+        TARGET_IP = '13.235.135.40'
     }
 
     stages {
@@ -31,10 +31,11 @@ pipeline {
               """
             }
         }
-
         stage('Restart Apache') {
             steps {
-                sh 'sudo systemctl restart apache2'
+                sh """
+                ssh ubuntu@${13.235.135.40} "sudosystemctl restart apache2"
+                """
             }
         }
     }
