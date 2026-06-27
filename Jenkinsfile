@@ -10,8 +10,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: https:// 'github.com/Dhanushrajan123/task.git'
-            }
+                git branch: 'main', url: 'https://github.com/Dhanushrajan123/task.git'
         }
 
         stage('Deploy to apache') {
