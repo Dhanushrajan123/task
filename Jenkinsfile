@@ -2,33 +2,49 @@ pipeline {
     agent any
 
     environment {
-        TARGET_SERVER = 'ubuntu@13.232.35.201'
-        DEPLOY_PATH   = '/var/www/html'
+        TARGET_SERVER = "3.108.218.123"
+        DEPLOY_DIR = "/var/www/html"
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Dhanushrajan123/task.git'
+                git branch: 'main',
+                    url: 'https://github.com/Dhanushrajan123/task.git'
             }
         }
 
-        stage('Deploy to Apache') {
+        stage('Build') {
             steps {
+                echo "Building application"
+
                 sh """
-                    scp -r * ubuntu@13.232.35.201:/var/www/html/
+                    mkdir -p ${DEPLOY_DIR}
                 """
             }
         }
 
+        stage('Deploy') {
+            steps {
+                sh """
+                    echo "Deploying application..."
+
+                    cp -r * ${DEPLOY_DIR}/
+
+                    echo "Deployment completed."
+                """
+            }
+        }
     }
+
     post {
         success {
-            echo 'Deployed successfully!'
+            echo "Deployment Successful"
         }
+
         failure {
-            echo 'Deployment failed!'
+            echo "Deployment Failed"
         }
     }
 }
