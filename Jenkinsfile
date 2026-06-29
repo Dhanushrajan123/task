@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
     steps {
         sh '''
-        scp -r 'build'
+        scp -r build ubuntu@13.204.69.126:/var/www/html/
         '''
     }
 }
