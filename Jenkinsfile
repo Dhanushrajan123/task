@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TARGET_SERVER = "3.108.218.123"
+        TARGET_SERVER = "13.127.119.157"
         DEPLOY_DIR = "/var/www/html"
     }
 
