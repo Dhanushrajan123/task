@@ -26,16 +26,12 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh """
-                    echo "Deploying application..."
-
-                    cp -r * ${DEPLOY_DIR}/
-
-                    echo "Deployment completed."
-                """
-            }
-        }
+    steps {
+        sh '''
+        scp -r * ubuntu@3.110.42.241:/var/www/html/
+        '''
+    }
+}
     }
 
     post {
