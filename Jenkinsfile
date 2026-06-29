@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TARGET_SERVER = "13.204.69.126"
+        TARGET_SERVER = "3.108.218.123"
         DEPLOY_DIR = "/var/www/html"
     }
 
@@ -26,12 +26,16 @@ pipeline {
         }
 
         stage('Deploy') {
-    steps {
-        sh '''
-        scp -r build ubuntu@13.204.69.126:/var/www/html/
-        '''
-    }
-}
+            steps {
+                sh """
+                    echo "Deploying application..."
+
+                    cp -r * ${DEPLOY_DIR}/
+
+                    echo "Deployment completed."
+                """
+            }
+        }
     }
 
     post {
