@@ -40,7 +40,7 @@ pipeline {
 
     post {
         success {
-            echo "Deployment Successful"
+            echo "Deployment Successful on ec2 server"
         }
 
         failure {
