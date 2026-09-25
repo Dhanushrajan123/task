@@ -44,7 +44,7 @@ pipeline {
         }
 
         failure {
-            echo "Deployment Failed"
+            echo "Deployment Failed on ec2 server"
         }
     }
 }
