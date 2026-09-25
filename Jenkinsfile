@@ -40,11 +40,11 @@ pipeline {
 
     post {
         success {
-            echo "Deployment Successful on ec2 server"
+            echo "Deployment Successful on ec2 server and kubernetes"
         }
 
         failure {
-            echo "Deployment Failed on ec2 server"
+            echo "Deployment Failed on ec2 server and kubernetes"
         }
     }
 }
