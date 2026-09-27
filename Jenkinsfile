@@ -44,7 +44,7 @@ this can be overitten
         }
 
         failure {
-            echo "Deployment Failed on ec2 server and kubernetes"
+            echo "Deployment Failed on ec2 server and kubernetes and the deployment on ec2"
         }
     }
 }
