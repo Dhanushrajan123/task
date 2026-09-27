@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent anything 
 
     environment {
         TARGET_SERVER = "13.127.119.157"
