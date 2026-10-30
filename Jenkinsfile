@@ -2,7 +2,7 @@ pipeline {
     agent any
 this can be overitten
     environment {
-        TARGET_SERVER = "13.127.119.157"
+        TARGET_SERVER = "13.233.247.169"
         DEPLOY_DIR = "/var/www/html"
     }
 
